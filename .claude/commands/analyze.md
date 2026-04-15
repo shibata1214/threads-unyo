@@ -57,6 +57,24 @@
 （コメントで多かった質問・反応）
 ```
 
-## ステップ6：結果を表示する
+## ステップ6：Notionの「分析レポート」ページに保存する
+
+Notion API（キー：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）を使って、
+ページID `3438be18-7f31-817f-95a6-cbd2d89bd6ac`（📊 分析レポート）に子ページとして保存してください。
+
+```bash
+TODAY=$(date '+%Y-%m-%d')
+curl -s -X POST https://api.notion.com/v1/pages \
+  -H "Authorization: Bearer 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" \
+  -H "Notion-Version: 2022-06-28" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"parent\": {\"page_id\": \"3438be18-7f31-817f-95a6-cbd2d89bd6ac\"},
+    \"properties\": {\"title\": [{\"text\": {\"content\": \"分析レポート $TODAY\"}}]},
+    \"children\": [（分析結果の全内容をブロックとして追加）]
+  }"
+```
+
+## ステップ7：結果を表示する
 
 分析結果のサマリーを日本語でわかりやすく報告してください。
