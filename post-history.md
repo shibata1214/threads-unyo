@@ -44,7 +44,8 @@ metrics_fetched: false
 ---
 id: 005
 投稿日時：2026-04-16
-Threads投稿ID：（手動投稿・ID不明）
+Threads投稿ID：DXLLhulkucL
+Threads投稿URL：https://www.threads.com/@haru_2kids_nurse/post/DXLLhulkucL
 テーマ：＃8000と＃7119の使い分け（夜間急変時の判断）
 型：型④専門家視点型
 本文（先頭50文字）：夜に子どもが急変したとき焦ってるママに覚えておいてほしい
