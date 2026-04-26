@@ -1,0 +1,46 @@
+[2026-04-18 20:26:04] スクリプト開始
+[2026-04-18 20:26:10] Container: {"id":"17956659156118776"}
+[2026-04-18 20:26:18] Publish: {"id":"18090210883963113"}
+[2026-04-18 20:26:18] ✅ メイン投稿完了 POST_ID=18090210883963113
+[2026-04-18 20:26:27] Tree Container: {"id":"17956659204118776"}
+[2026-04-18 20:26:41] Tree Publish: {"id":"17981957438989564"}
+[2026-04-18 20:26:41] ✅ ツリー投稿完了 TREE_POST_ID=17981957438989564
+[main 8173009] 投稿完了：2026-04-18 20:26
+ Committer: 柴田美奈 <mina@shibataminanoMacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 20 insertions(+)
+[2026-04-18 20:26:42] ✅ 全完了
+[2026-04-19 20:26:02] スクリプト開始
+[2026-04-19 20:26:08] Container: {"id":"17956920468118776"}
+[2026-04-19 20:26:16] Publish: {"id":"17987030915966536"}
+[2026-04-19 20:26:16] ✅ メイン投稿完了 POST_ID=17987030915966536
+[2026-04-19 20:26:24] Tree Container: {"id":"17956920492118776"}
+[2026-04-19 20:26:34] Tree Publish: {"id":"17944656156152111"}
+[2026-04-19 20:26:34] ✅ ツリー投稿完了 TREE_POST_ID=17944656156152111
+[main dd947a1] 投稿完了：2026-04-18 20:26
+ Committer: 柴田美奈 <mina@shibataminanoMacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 20 insertions(+)
+[2026-04-19 20:26:36] ✅ 全完了

@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "mcp__scheduled-tasks__create_scheduled_task|mcp__scheduled-tasks__update_scheduled_task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/mina/スレッズ/ops-doc-updater.py --from-hook 2>/dev/null || true",
+            "timeout": 30,
+            "statusMessage": "Notionの運用ドキュメントを更新中...",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/mina/スレッズ/notion_sync_all.py 2>/dev/null || true",
+            "timeout": 60,
+            "statusMessage": "Notionに同期中...",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

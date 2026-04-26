@@ -1,0 +1,28 @@
+=== 投稿開始: 2026-04-21 22:09:09 ===
+📤 メイン投稿中...
+コンテナ: {"id":"17957425113118776"}
+公開結果: {"id":"18067601768442678"}
+✅ メイン投稿完了 POST_ID: 18067601768442678
+📤 ツリー投稿中...
+ツリーコンテナ: {"id":"17957425350118776"}
+ツリー公開: {"id":"18014508005845656"}
+✅ ツリー投稿完了 TREE_POST_ID: 18014508005845656
+✅ post-history.md 記録完了
+[main 90c7669] 投稿完了：2026-04-21 22:09 アロベビーミルクローションPR
+ Committer: 柴田美奈 <mina@shibataminanoMacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 27 insertions(+)
+To https://github.com/shibata1214/threads-unyo.git
+   3b28b0c..90c7669  main -> main
+✅ 全完了

@@ -32,6 +32,16 @@
 - next-topics.md の来週テーマを提案・更新する
 - 特に力を入れるべき投稿型を1つ指定する
 
-## ステップ5：レポートを表示する
+## ステップ5：Notionの「運用レポート」ページに保存する
+
+レビュー結果をファイルに書き出してからNotionに保存してください。
+
+```bash
+# レビュー結果を一時ファイルに保存してからNotionへ
+TODAY=$(date '+%Y-%m-%d')
+python3 /Users/mina/スレッズ/notion_reporter.py supervisor "🔰 週次レビュー ${TODAY}" /Users/mina/スレッズ/supervisor-report.md
+```
+
+## ステップ6：レポートを表示する
 
 わかりやすく日本語でまとめて報告してください。

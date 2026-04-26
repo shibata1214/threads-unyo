@@ -93,20 +93,11 @@
 
 ## ステップ5：Notionの「運用レポート」ページに保存する
 
-Notion API（キー：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）を使って、
-ページID `3438be18-7f31-812e-b69c-f83c61e03e9c`（🔰 運用レポート）に子ページとして保存してください。
+`supervisor-report.md` の内容を使って Notion に子ページを作成してください。
 
 ```bash
 TODAY=$(date '+%Y-%m-%d')
-curl -s -X POST https://api.notion.com/v1/pages \
-  -H "Authorization: Bearer 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" \
-  -H "Notion-Version: 2022-06-28" \
-  -H "Content-Type: application/json" \
-  -d "{
-    \"parent\": {\"page_id\": \"3438be18-7f31-812e-b69c-f83c61e03e9c\"},
-    \"properties\": {\"title\": [{\"text\": {\"content\": \"運用レポート $TODAY\"}}]},
-    \"children\": [（レポート内容をブロックとして追加）]
-  }"
+python3 /Users/mina/スレッズ/notion_reporter.py supervisor "🔰 運用レポート ${TODAY}" /Users/mina/スレッズ/supervisor-report.md
 ```
 
 ## ステップ6：GitHubにプッシュ

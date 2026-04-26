@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+To https://github.com/shibata1214/threads-unyo.git
+   213c1a3..c322c3a  main -> main
+To https://github.com/shibata1214/threads-unyo.git
+   de8df2c..4a5f0ed  main -> main
+To https://github.com/shibata1214/threads-unyo.git
+   125869a..3d1c03d  main -> main

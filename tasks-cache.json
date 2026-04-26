@@ -1,0 +1,66 @@
+{
+  "threads-daily-post-generator": {
+    "taskId": "threads-daily-post-generator",
+    "description": "毎朝3時にThreads投稿7本を自動生成してpost-queue.mdとNotionに保存",
+    "schedule": "At 03:05 AM, every day",
+    "cronExpression": "57 2 * * *",
+    "enabled": true,
+    "skill": "/write-post"
+  },
+  "threads-fetcher-daily": {
+    "taskId": "threads-fetcher-daily",
+    "description": "毎夜23時に投稿エンゲージメントデータを自動取得する",
+    "schedule": "At 11:11 PM, every day",
+    "cronExpression": "7 23 * * *",
+    "enabled": true,
+    "skill": "/fetch-metrics"
+  },
+  "threads-supervisor-weekly": {
+    "taskId": "threads-supervisor-weekly",
+    "description": "毎日22時に運用状態を自動診断してレポートを作成する",
+    "schedule": "At 10:08 PM, every day",
+    "cronExpression": "7 22 * * *",
+    "enabled": true,
+    "skill": "/supervisor"
+  },
+  "threads-rakuten-research-weekly": {
+    "taskId": "threads-rakuten-research-weekly",
+    "description": "毎週月曜朝10時に楽天商品リサーチを自動更新する",
+    "schedule": "At 10:08 AM, only on Monday",
+    "cronExpression": "7 10 * * 1",
+    "enabled": true,
+    "skill": "/rakuten-research"
+  },
+  "threads-trend-research-weekly": {
+    "taskId": "threads-trend-research-weekly",
+    "description": "毎週月・木・土 朝3時にThreads＋Instagram育児ママ系バズり投稿を収集してネタに反映する",
+    "schedule": "At 03:00 AM, Mon/Thu/Sat",
+    "cronExpression": "0 3 * * 1,4,6",
+    "enabled": true,
+    "skill": "/trend-research"
+  },
+  "threads-poster-morning": {
+    "taskId": "threads-poster-morning",
+    "description": "毎朝9時にpost-queue.mdから1本投稿する",
+    "schedule": "At 09:05 AM, every day",
+    "cronExpression": "3 9 * * *",
+    "enabled": false,
+    "skill": "/post"
+  },
+  "threads-poster-noon": {
+    "taskId": "threads-poster-noon",
+    "description": "毎昼12時にpost-queue.mdから1本投稿する",
+    "schedule": "At 12:05 PM, every day",
+    "cronExpression": "3 12 * * *",
+    "enabled": false,
+    "skill": "/post"
+  },
+  "threads-poster-evening": {
+    "taskId": "threads-poster-evening",
+    "description": "毎夜20時にpost-queue.mdから1本投稿する",
+    "schedule": "At 08:04 PM, every day",
+    "cronExpression": "3 20 * * *",
+    "enabled": false,
+    "skill": "/post"
+  }
+}

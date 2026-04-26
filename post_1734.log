@@ -1,0 +1,28 @@
+=== 投稿開始: 2026-04-21 19:12:09 ===
+📤 メイン投稿中...
+コンテナ: {"id":"17957393247118776"}
+公開結果: {"id":"18090564511971220"}
+✅ メイン投稿完了 POST_ID: 18090564511971220
+📤 ツリー投稿中...
+ツリーコンテナ: {"id":"17957393298118776"}
+ツリー公開: {"id":"18071439761379460"}
+✅ ツリー投稿完了 TREE_POST_ID: 18071439761379460
+✅ post-history.md 記録完了
+[main 6145cd5] 投稿完了：2026-04-21 17:34 キズパワーパッド
+ Committer: 柴田美奈 <mina@shibataminanoMacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 29 insertions(+)
+To https://github.com/shibata1214/threads-unyo.git
+   ca450a4..6145cd5  main -> main
+✅ 全完了
