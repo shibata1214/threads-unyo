@@ -27,7 +27,7 @@ from typing import Optional, List
 
 BASE = Path(__file__).resolve().parent
 NOTION_DB_ID    = "3508be18-7f31-80af-ad02-d3eb16f9452e"
-NOTION_DB_URL   = "https://www.notion.so/3508be187f3180afad02d3eb16f9452e"
+NOTION_DB_URL   = "https://www.notion.so/DB-3508be187f3180588e3eebb8681f110d"
 SYNCED_IDS_FILE = BASE / "notion-db-synced-ids.json"
 JST             = timezone(timedelta(hours=9))
 
