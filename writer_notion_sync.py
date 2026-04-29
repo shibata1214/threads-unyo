@@ -28,7 +28,8 @@ from typing import Optional, List
 BASE = Path(__file__).resolve().parent
 NOTION_DB_ID    = "3508be18-7f31-80af-ad02-d3eb16f9452e"
 NOTION_DB_URL   = "https://www.notion.so/DB-3508be187f3180588e3eebb8681f110d"
-SYNCED_IDS_FILE = BASE / "notion-db-synced-ids.json"
+SYNCED_IDS_FILE   = BASE / "notion-db-synced-ids.json"
+ORIGINALS_FILE    = BASE / "notion-originals.json"
 JST             = timezone(timedelta(hours=9))
 
 # プロパティ名（実際のNotion DB列名）
@@ -140,10 +141,22 @@ def save_synced_ids(ids: set) -> None:
     )
 
 
+def load_originals() -> dict:
+    if ORIGINALS_FILE.exists():
+        return json.loads(ORIGINALS_FILE.read_text(encoding="utf-8"))
+    return {}
+
+
+def save_originals(originals: dict) -> None:
+    ORIGINALS_FILE.write_text(
+        json.dumps(originals, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
 # ── Notion API ───────────────────────────────────────────────
 
-def notion_create_page(main_text: str, tree_text: str, date_str: str) -> Optional[str]:
-    """Notion DBに1件追加。成功時はNotion URLを返す。"""
+def notion_create_page(main_text: str, tree_text: str, date_str: str):
+    """Notion DBに1件追加。成功時は (url, page_id) を返す。失敗時は (None, None)。"""
     payload = {
         "parent": {"database_id": NOTION_DB_ID},
         "properties": {
@@ -176,13 +189,13 @@ def notion_create_page(main_text: str, tree_text: str, date_str: str) -> Optiona
     try:
         with urllib.request.urlopen(req, timeout=30) as r:
             result = json.loads(r.read())
-            return result.get("url", "")
+            return result.get("url", ""), result.get("id", "")
     except urllib.error.HTTPError as e:
         print(f"  [Notion] HTTP {e.code}: {e.read().decode()[:300]}")
-        return None
+        return None, None
     except Exception as e:
         print(f"  [Notion] エラー: {e}")
-        return None
+        return None, None
 
 
 # ── Slack 通知 ───────────────────────────────────────────────
@@ -230,6 +243,7 @@ def main(post_count: int = 10) -> None:
 
     success_ids = []
     fail_count = 0
+    originals = load_originals()
 
     for post in new_posts:
         pid       = post["id"]
@@ -238,18 +252,26 @@ def main(post_count: int = 10) -> None:
         tree_text = post.get("tree_text", "")
 
         print(f"  [{pid}] {date_str} - {main_text[:30]}...")
-        page_url = notion_create_page(main_text, tree_text, date_str)
+        page_url, page_id = notion_create_page(main_text, tree_text, date_str)
 
         if page_url is not None:
             success_ids.append(pid)
             synced_ids.add(pid)
+            # 原文を保存（編集検知に使用）
+            originals[pid] = {
+                "page_id": page_id,
+                "original_main": main_text,
+                "original_tree": tree_text,
+                "synced_at": datetime.now(JST).isoformat(),
+            }
             print(f"  ✅ Notion追加: {page_url}")
         else:
             fail_count += 1
             print(f"  ❌ Notion追加失敗")
 
-    # 同期済みIDを保存
+    # 同期済みIDと原文を保存
     save_synced_ids(synced_ids)
+    save_originals(originals)
 
     print(f"同期完了: 成功{len(success_ids)}件 / 失敗{fail_count}件")
     _send_slack_report(post_count, len(success_ids), now_str)
